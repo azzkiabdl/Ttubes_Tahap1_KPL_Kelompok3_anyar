@@ -1,11 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
+﻿
+using System;
 using Tubes_Tahap1_KPL_kelompok3.Model;
 using Tubes_Tahap1_KPL_kelompok3.Service;
 using Tubes_Tahap1_KPL_kelompok3.table_driven;
 using Tubes_Tahap1_KPL_kelompok3.Automata;
 using Tubes_Tahap1_KPL_kelompok3.Utils;
-using Tubes_Tahap1_KPL_kelompok3.Components; // ✅ Tambahkan ini
 
 namespace Tubes_Tahap1_KPL_kelompok3
 {
@@ -81,19 +80,10 @@ namespace Tubes_Tahap1_KPL_kelompok3
         static void TampilkanSemuaSiswa(SiswaService siswaService)
         {
             Console.WriteLine("\n=== DAFTAR SISWA ===");
-
-            // ✅ Gunakan TableRenderer
-            var siswaList = siswaService.GetSemua();
-
-            var columns = new Dictionary<string, Func<Siswa, string>>
+            foreach (var s in siswaService.GetSemua())
             {
-                { "ID", s => s.Id.ToString() },
-                { "Nama", s => s.Nama },
-                { "Kelas", s => s.Kelas },
-                { "Poin", s => s.TotalPoin.ToString() }
-            };
-
-            TableRenderer.Render(siswaList, columns);
+                Console.WriteLine($"ID: {s.Id} | Nama: {s.Nama} | Kelas: {s.Kelas} | Poin: {s.TotalPoin}");
+            }
         }
 
         static void TambahPelanggaran(SiswaService siswaService, PelanggaranService pelanggaranService)
@@ -150,20 +140,9 @@ namespace Tubes_Tahap1_KPL_kelompok3
             }
 
             Console.WriteLine($"\n=== RIWAYAT PELANGGARAN {siswa.Nama} ===");
-
-            foreach (var pelanggaran in siswa.RiwayatPelanggaran)
+            foreach (var p in siswa.RiwayatPelanggaran)
             {
-                // ✅ Gunakan FormBuilder untuk tampilkan per pelanggaran
-                var fields = new Dictionary<string, Func<Pelanggaran, string>>
-                {
-                    { "Jenis", p => p.Jenis },
-                    { "Poin", p => p.Poin.ToString() },
-                    { "Tanggal", p => Formatter.FormatTanggal(p.Tanggal) },
-                    { "Status", p => p.Status.ToString() }
-                };
-
-                FormBuilder.TampilkanForm(fields, pelanggaran);
-                Console.WriteLine("--------------------------");
+                Console.WriteLine($"- {p.Jenis} | {p.Poin} poin | {Formatter.FormatTanggal(p.Tanggal)} | Status: {p.Status}");
             }
         }
 
