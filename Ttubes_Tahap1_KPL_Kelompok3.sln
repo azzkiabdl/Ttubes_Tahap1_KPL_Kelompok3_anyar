@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.14.36025.13 d17.14
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ttubes_Tahap1_KPL_Kelompok3", "Ttubes_Tahap1_KPL_Kelompok3.csproj", "{77B2B705-6E11-42EE-A7DF-FAB69F548ACB}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{77B2B705-6E11-42EE-A7DF-FAB69F548ACB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{77B2B705-6E11-42EE-A7DF-FAB69F548ACB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{77B2B705-6E11-42EE-A7DF-FAB69F548ACB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{77B2B705-6E11-42EE-A7DF-FAB69F548ACB}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {C42098C2-17D3-43A6-8991-FED91CDE1D56}
+	EndGlobalSection
+EndGlobal
